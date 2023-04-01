@@ -35,7 +35,7 @@ import java.util.*
 class PostControllerTest {
 
     @TestConfiguration
-    @Import(ValidationConfig::class, SecurityConfig::class)
+    @Import(SecurityConfig::class)
     class TestConfig
 
     @MockkBean
