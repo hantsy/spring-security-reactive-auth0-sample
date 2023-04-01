@@ -1,29 +1,26 @@
 package com.example.demo.interfaces
 
-import com.example.demo.interfaces.dto.CreateCommentCommand
-import com.example.demo.interfaces.dto.CreatePostCommand
-import com.example.demo.interfaces.dto.UpdatePostCommand
 import com.example.demo.domain.exception.PostNotFoundException
 import com.example.demo.domain.model.Comment
 import com.example.demo.domain.model.Post
 import com.example.demo.domain.repository.CommentRepository
 import com.example.demo.domain.repository.PostRepository
+import com.example.demo.interfaces.dto.CreateCommentCommand
+import com.example.demo.interfaces.dto.CreatePostCommand
+import com.example.demo.interfaces.dto.UpdatePostCommand
+import jakarta.validation.Valid
+import java.net.URI
+import java.util.*
 import kotlinx.coroutines.flow.Flow
 import org.springframework.http.ResponseEntity
 import org.springframework.http.ResponseEntity.*
 import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.*
-import java.net.URI
-import java.util.*
-import javax.validation.Valid
 
 @RestController()
 @RequestMapping("/posts")
 @Validated
-class PostController(
-    private val posts: PostRepository,
-    private val comments: CommentRepository
-) {
+class PostController(private val posts: PostRepository, private val comments: CommentRepository) {
 
     @GetMapping
     fun allPosts(): ResponseEntity<Flow<Post>> {
@@ -44,7 +41,10 @@ class PostController(
     }
 
     @PutMapping("/{id}")
-    suspend fun update(@PathVariable("id") id: UUID, @RequestBody @Valid data: UpdatePostCommand): ResponseEntity<Any> {
+    suspend fun update(
+            @PathVariable("id") id: UUID,
+            @RequestBody @Valid data: UpdatePostCommand
+    ): ResponseEntity<Any> {
         val post = posts.findById(id) ?: throw PostNotFoundException(id)
         post.apply {
             title = data.title
@@ -69,8 +69,8 @@ class PostController(
 
     @PostMapping("/{id}/comments")
     suspend fun createComment(
-        @PathVariable("id") id: UUID,
-        @RequestBody @Valid data: CreateCommentCommand
+            @PathVariable("id") id: UUID,
+            @RequestBody @Valid data: CreateCommentCommand
     ): ResponseEntity<Any> {
         val post = posts.findById(id) ?: throw PostNotFoundException(id)
         val comment = Comment(content = data.content, postId = post.id!!)
