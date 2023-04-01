@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.1</version>
+        <version>3.0.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
@@ -17,10 +17,10 @@
         <java.version>17</java.version>
         <kotlin.version>1.6.21</kotlin.version>
         <kotlin-coroutines.version>1.6.3</kotlin-coroutines.version>
-        <testcontainers.version>1.17.3</testcontainers.version>
-        <kotest.version>5.3.1</kotest.version>
-        <mockk.version>1.12.4</mockk.version>
-        <springmockk.version>3.1.1</springmockk.version>
+        <testcontainers.version>1.17.6</testcontainers.version>
+        <kotest.version>5.5.5</kotest.version>
+        <mockk.version>1.13.4</mockk.version>
+        <springmockk.version>4.0.2</springmockk.version>
     </properties>
     <dependencies>
         <dependency>
