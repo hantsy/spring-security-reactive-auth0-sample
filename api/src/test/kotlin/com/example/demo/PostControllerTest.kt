@@ -1,7 +1,6 @@
 package com.example.demo
 
 import com.example.demo.application.SecurityConfig
-import com.example.demo.application.ValidationConfig
 import com.example.demo.domain.model.Post
 import com.example.demo.domain.repository.CommentRepository
 import com.example.demo.domain.repository.PostRepository
