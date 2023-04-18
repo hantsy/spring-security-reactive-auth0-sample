@@ -17,7 +17,7 @@ data class Post(
     var title: String,
 
     @Column("content")
-    var content: String,
+    var content: String? = null,
 
     @Column("status")
     var status: Status = Status.DRAFT,
