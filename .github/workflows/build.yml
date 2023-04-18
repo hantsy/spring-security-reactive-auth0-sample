@@ -41,7 +41,7 @@ jobs:
       run: mvn -B package
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
-    - name: Update dependency graph
-      uses: advanced-security/maven-dependency-submission-action@72bdd87d620be905d2add3aa48214250a1921eb3
+    #- name: Update dependency graph
+    #  uses: advanced-security/maven-dependency-submission-action@72bdd87d620be905d2add3aa48214250a1921eb3
     #  with:
     #    directory: api
