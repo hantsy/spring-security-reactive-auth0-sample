@@ -17,7 +17,7 @@
         <java.version>17</java.version>
         <kotlin.version>1.9.23</kotlin.version>
         <kotlin-coroutines.version>1.6.3</kotlin-coroutines.version>
-        <testcontainers.version>1.19.6</testcontainers.version>
+        <testcontainers.version>1.19.7</testcontainers.version>
         <kotest.version>5.8.1</kotest.version>
         <mockk.version>1.13.9</mockk.version>
         <springmockk.version>4.0.2</springmockk.version>
