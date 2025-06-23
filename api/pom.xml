@@ -19,7 +19,7 @@
         <kotlin-coroutines.version>1.6.3</kotlin-coroutines.version>
         <testcontainers.version>1.21.0</testcontainers.version>
         <kotest.version>5.9.1</kotest.version>
-        <mockk.version>1.14.2</mockk.version>
+        <mockk.version>1.14.4</mockk.version>
         <springmockk.version>4.0.2</springmockk.version>
     </properties>
     <dependencies>
